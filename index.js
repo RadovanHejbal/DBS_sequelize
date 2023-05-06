@@ -68,7 +68,11 @@ Book.belongsTo(Publication, {
   }
 });
 
-Book.hasMany(Rental);
+Book.hasMany(Rental, {
+  foreignKey: {
+    name: 'publication_instance_id'
+  }
+});
 Publication.hasMany(Reservation);
 
 // fines, wishlist, reviews

@@ -20,7 +20,7 @@ const User = sequelize.define("user", {
     type: DataTypes.STRING(40),
   },
   birth_date: {
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
   },
   email: {
     type: DataTypes.STRING,
@@ -29,15 +29,8 @@ const User = sequelize.define("user", {
         isEmail: true
     }
   },
-  childemail_id: {
-    type: DataTypes.STRING,
-    validate: {
-        isEmail: true
-    }
-  },
-  card_id: {
-    type: DataTypes.UUID,
-  },
+}, {
+  timestamps: false
 });
 
 module.exports = User;

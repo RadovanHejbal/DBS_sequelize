@@ -8,6 +8,8 @@ const Reservation = sequelize.define("reservation", {
         primaryKey: true,
         allowNull: false,
     },
-})
+}, {
+    timestamps: false
+  })
 
 module.exports = Reservation;

@@ -15,6 +15,8 @@ const Card = sequelize.define("card", {
     status: {
         type: DataTypes.STRING,
     },
-})
+}, {
+    timestamps: false
+  })
 
 module.exports = Card;

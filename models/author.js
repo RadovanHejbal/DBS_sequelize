@@ -14,6 +14,8 @@ const Author = sequelize.define("author", {
   surname: {
     type: DataTypes.STRING(40),
   },
+}, {
+  timestamps: false
 });
 
 module.exports = Author;

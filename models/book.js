@@ -21,6 +21,8 @@ const Book = sequelize.define("book", {
   status: {
     type: DataTypes.STRING,
   }
+}, {
+  timestamps: false
 });
 
 module.exports = Book;

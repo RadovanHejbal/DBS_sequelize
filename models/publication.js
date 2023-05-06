@@ -12,6 +12,8 @@ const Publication = sequelize.define("publication", {
         type: DataTypes.STRING,
         allowNull: false,
     },
-})
+}, {
+    timestamps: false
+  })
 
 module.exports = Publication;

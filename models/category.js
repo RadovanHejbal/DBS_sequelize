@@ -12,6 +12,8 @@ const Category = sequelize.define("category", {
     type: DataTypes.STRING(40),
     allowNull: false
   },
+}, {
+  timestamps: false
 });
 
 module.exports = Category;

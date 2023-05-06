@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     const { user_id, publication_id, id } = req.body;
 
-    Reservation.create({userId: user_id, publicationId: publication_id, id: id}).then(response => {
+    Reservation.create({user_id, publication_id, id: id}).then(response => {
         res.status(201).json(response);
     }).catch(err => {
         res.status(400);

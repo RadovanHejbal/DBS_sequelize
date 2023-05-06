@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
     const cardObject = {
         magstripe,
         status,
-        userId
+        user_id: userId
     }
 
     if(id) {

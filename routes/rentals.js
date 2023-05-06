@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
 
     Book.findOne({
         where: {
-            publicationId: publication_id,
+            publication_id: publication_id,
             status: 'available'
         }
     }).then(response => {
@@ -31,8 +31,9 @@ router.post('/', (req, res) => {
         }
         const date = new Date();
         Rental.create({
-            bookId: response.dataValues.id,
-            userId: user_id,
+            id: id,
+            publication_instance_id: response.dataValues.id,
+            user_id: user_id,
             duration: duration,
             status: "active",
             start_date: date,

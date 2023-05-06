@@ -51,11 +51,31 @@ app.use('/reservations', reservationsRouter);
 /* RELATIONS */
 
 //users
-User.hasMany(Reservation);
-User.hasMany(Rental);
-Reservation.belongsTo(User);
-Rental.belongsTo(User);
-Card.belongsTo(User);
+User.hasMany(Reservation, {
+  foreignKey: {
+    name: 'user_id'
+  }
+});
+User.hasMany(Rental, {
+  foreignKey: {
+    name: 'user_id'
+  }
+});
+Reservation.belongsTo(User, {
+  foreignKey: {
+    name: 'user_id'
+  }
+});
+Rental.belongsTo(User, {
+  foreignKey: {
+    name: 'user_id'
+  }
+});
+Card.belongsTo(User, {
+  foreignKey: {
+    name: 'user_id'
+  }
+});
 
 //publications
 Author.belongsToMany(Publication, { through: PublicationAuthor });
@@ -64,6 +84,7 @@ Category.belongsToMany(Publication, { through: PublicationCategory });
 Publication.belongsToMany(Category, { through: PublicationCategory });
 Book.belongsTo(Publication, {
   foreignKey: {
+    name: 'publication_id',
     onDelete: 'CASCADE'
   }
 });
@@ -73,7 +94,11 @@ Book.hasMany(Rental, {
     name: 'publication_instance_id'
   }
 });
-Publication.hasMany(Reservation);
+Publication.hasMany(Reservation, {
+  foreignKey: {
+    name: 'publication_id'
+  }
+});
 
 // fines, wishlist, reviews
 Fine.belongsTo(Rental);

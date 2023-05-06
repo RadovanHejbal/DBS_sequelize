@@ -7,7 +7,7 @@ router.post('/', (req, res) => {
     const { id, type, publisher, year, status, publication_id } = req.body;
 
     Book.create({
-        id, type, publisher, year, status, publicationId: publication_id
+        id, type, publisher, year, status, publication_id
     }).then(response => {
         res.status(201).json(response);
     }).catch(err => {

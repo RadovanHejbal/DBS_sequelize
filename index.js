@@ -8,6 +8,7 @@ const port = 8000;
 app.use(bodyParser.json());
 app.use(express.json());
 
+//importing models
 const User = require('./models/user');
 const Publication = require('./models/publication');
 const Reservation = require('./models/reservation');

@@ -37,7 +37,7 @@ router.get("/:id", (req, res) => {
       res.status(200).json(response.dataValues);
     })
     .catch((err) => {
-      res.status(500).json("Something went wrong");
+      res.status(404).json("Something went wrong");
     });
 });
 
@@ -90,7 +90,7 @@ router.delete("/:id", async (req, res) => {
     });
   } catch (err) {
     console.log(err);
-    res.status(500).json("Something went wrong");
+    res.status(404).json("Something went wrong");
   }
 });
 

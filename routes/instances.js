@@ -38,7 +38,7 @@ router.delete('/:id', (req, res) => {
         }
         res.status(204).json('Card deleted successfully');
       }).catch(err => {
-        res.status(500).json('Something went wrong');
+        res.status(404).json('Not Found');
       });
 })
 

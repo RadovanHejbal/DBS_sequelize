@@ -12,7 +12,7 @@ router.get('/:id', (req, res) => {
         }
         res.status(200).json(response);
     }).catch(err => {
-        res.status(500).json('');
+        res.status(404).json('');
     })
 })
 
@@ -45,7 +45,7 @@ router.post('/', (req, res) => {
             res.status(400).json('');
         })
     }).catch(err => {
-        res.status(500).json('Something went wrong');
+        res.status(404).json('Something went wrong');
     })
 })
 

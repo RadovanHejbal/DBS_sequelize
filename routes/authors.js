@@ -14,7 +14,7 @@ router.get('/:id', (req, res) => {
         }
         res.status(200).json(response);
     }).catch(err => {
-        res.status(500).json('');
+        res.status(404).json('Not Found');
     })
 })
 
@@ -56,7 +56,7 @@ router.delete('/:id', (req, res) => {
         }
         res.status(204).send();
       }).catch(err => {
-        res.status(500).json('Something went wrong');
+        res.status(404).json('Not Found');
       });
 })
 

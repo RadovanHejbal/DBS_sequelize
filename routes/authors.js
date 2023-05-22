@@ -14,7 +14,7 @@ router.get('/:id', (req, res) => {
         }
         res.status(200).json(response);
     }).catch(err => {
-        res.status(404).json('Not Found');
+        res.status(500).json('Not Found');
     })
 })
 
@@ -24,11 +24,7 @@ router.post('/', (req, res) => {
     const surname = req.body.surname;
 
     const authorObject = {
-        name, surname
-    }
-
-    if(id) {
-        authorObject.id = id;
+        name, surname, id
     }
 
     Author.create(authorObject).then(response => {
@@ -56,7 +52,7 @@ router.delete('/:id', (req, res) => {
         }
         res.status(204).send();
       }).catch(err => {
-        res.status(404).json('Not Found');
+        res.status(500).json('Something went wrong');
       });
 })
 
